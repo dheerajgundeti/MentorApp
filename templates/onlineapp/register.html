@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
+</head>
+<body>
+    <div align="center">
+        <h1 style="font-size:30px;"><b> Add College </b></h1><br>
+    </div><br>
+    <form method="POST" class="form" >
+        {% csrf_token %}
+        <div class="field" align="center">
+            <label class="label">Name</label>{{form.name}}
+        </div>
+        <div class="field" align="center">
+            <label class="label">Location</label>
+                {{form.location}}
+        </div>
+        <div class="field" align="center">
+            <label class="label">Acronym</label>
+                {{form.acronym}}
+        </div>
+        <div class="field" align="center">
+            <label class="label">Contact</label>
+                {{form.contact}}
+        </div>
+        <div align="center">
+            <input type="submit" class="button is-rounded">
+        </div>
+    </form>
+</body>
+</html>

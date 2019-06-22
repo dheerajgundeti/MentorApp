@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{Title}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
+</head>
+<body>
+    <h1 class="is-family-monospace" align="center" style="font-size:30px;"><b> {{Title}} </b></h1>
+    </br>
+    <div align="center">
+        <a class="button is-rounded" href="http://127.0.0.1:8000/colleges/{{collegeid}}/add" >+ Add Student</a>
+    </div><br>
+    <table align="center" class="table"  width="1000">
+        <tr>
+            <td><b>NAME</b></td>
+            <td><b>MARKS</b></td>
+            <td><b>MAIL ID</b></td>
+            <td><b>MODIFY</b></td>
+        </tr>
+        {% for student in studs %}
+        <tr>
+            <td>{{student.student__name}}</td>
+            <td>{{student.student__mocktest1__total}}</td>
+            <td>{{student.student__email}}</td>
+            <td><a class="button is-rounded" href="{{collegeid}}/{{student.student__id}}/edit" >edit</a>  <a class="button is-rounded" href="{{collegeid}}/{{student.student__id}}/delete">delete</a></td>
+        </tr>{% endfor %}
+    </table>
+</body>
+</html>

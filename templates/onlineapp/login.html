@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
+</head>
+<body><br><br>
+    <form method="POST" class="form" align="center">
+        <div>
+        {% csrf_token %}
+        {{ form.as_p}}
+        </div>
+        <br>
+        <div align="center">
+            <input type="submit" class="button is-rounded">
+        </div>
+    </form><br>
+    <div align="center">
+        <a href="{% url 'signup_html' %}" class="button is-box">SignUp</a>
+    </div><br><br>
+    {% if messages %}
+        <article clss ="message is-danger">
+            <div class="message-header">
+                <p>Error</p>
+            </div>
+            <div class="message-body">
+                {% for message in messages %}
+                    {{message}}
+                {% endfor %}
+            </div>
+        </article>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+</head>
+<body>
+    <form method="POST" class="form" >
+        {% csrf_token %}
+        {{ studs.as_p }}
+        {{ studsmarks.as_p}}
+        <div align="center">
+            <input type="submit" class="button is-rounded">
+        </div>
+    </form>
+</body>
+</html>
